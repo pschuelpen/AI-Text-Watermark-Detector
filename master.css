@@ -1,0 +1,151 @@
+:root {
+    --radius: 0.75rem;
+}
+
+body {
+    font-family: monospace;
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.logo-container {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 800px;
+    margin: auto;
+}
+
+textarea {
+    width: 95%;
+    font-family: monospace;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: var(--radius);
+    resize: vertical;
+}
+
+input[type="submit"],
+.copy-btn {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copy-btn {
+    background-color: #888;
+    margin-top: 5px;
+}
+
+input[type="submit"]:hover,
+.copy-btn:hover {
+    background-color: #333;
+}
+
+.hidden {
+    background-color: yellow;
+    padding: 2px 4px;
+    border-radius: var(--radius);
+}
+
+.char-box {
+    border-bottom: 1px solid #ccc;
+    padding: 4px 0;
+}
+
+.output-section {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.annotated-text,
+.clean-text {
+    white-space: pre-wrap;
+    font-family: monospace;
+    padding: 15px;
+    border: 1px solid #000;
+    border-radius: var(--radius);
+    background-color: #f9f9f9;
+    overflow-x: auto;
+}
+
+.char-breakdown-scroll {
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #000;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: var(--radius);
+}
+
+.result_p {
+    text-align: center; 
+    font-size: 0.8rem;
+    padding: 1rem 0.7rem;
+    border-radius: var(--radius);
+    background-color: #efefef;
+    margin-bottom: 2rem;
+}
+
+section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+}
+
+section a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 0.6rem 1rem 2.5rem; /* left padding to make room for icon */
+  background-color: #efefef;
+  border-radius: var(--radius);
+  color: inherit;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Link icon on the left using a pseudo-element */
+section a::before {
+  content: "⚭"; /* Or use an SVG background, font icon, or inline SVG */
+  position: absolute;
+  left: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  pointer-events: none; /* So icon doesn't interfere with clicking the link */
+}
+
+
+@media (max-width: 600px) {
+    textarea {
+        font-size: 0.9rem;
+    }
+
+    input[type="submit"],
+    .copy-btn {
+        font-size: 0.9rem;
+    }
+}
